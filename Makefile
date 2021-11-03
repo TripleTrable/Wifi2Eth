@@ -6,7 +6,8 @@ RM:= rm
 BINDIR:=bin
 SRCS:= \
     src/main.c \
-	src/framebuffer.c
+	src/framebuffer.c \
+	
 
 INCDIR:=inc
 OBJDIR:=.o
@@ -16,9 +17,9 @@ DEPDIR:=.d
 
 CFLAGS:= -std=c11
 CXXFLAGS:= -std=c++17
-CPPFLAGS := -g -Wall -Wextra -pedantic -I $(INCDIR)
+CPPFLAGS := -g -Wall -Wextra -pedantic -I $(INCDIR) -I /usr/include/freetype2
 LDFLAGS:=
-LDLIB:=
+LDLIBS:= -lfreetype
 DEPFLAGS = -MT $@ -MD -MP -MF $(DEPDIR)/$*.Td
 
 
