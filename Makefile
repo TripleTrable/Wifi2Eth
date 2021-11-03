@@ -31,9 +31,9 @@ $(shell mkdir -p $(dir $(OBJS)) >/dev/null)
 $(shell mkdir -p $(dir $(DEPS)) >/dev/null)
 
 
-all: $(BINDIR)/neonm
+all: $(BINDIR)/wifi2eth
 
-$(BINDIR)/neonm: $(OBJS)
+$(BINDIR)/wifi2eth: $(OBJS)
 	$(LD) $(LDFLAGS) $(LDLIBS) -o $@  $^
 
 $(OBJDIR)/%.o: %.c
